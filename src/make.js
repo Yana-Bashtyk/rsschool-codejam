@@ -1,4 +1,4 @@
-function make(...theArgs) {
+module.exports = function make(...theArgs) {
   let callbacks = Array.from(theArgs);
   let tmp = [];
   return function inner(...args) {
@@ -10,4 +10,4 @@ function make(...theArgs) {
       } return callbacks.reduce((a, b) => (args[i](a, b)));
     }
   };
-}
+};
