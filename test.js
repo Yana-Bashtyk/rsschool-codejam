@@ -70,4 +70,16 @@ describe('recursion function', () => {
     };
     assert.deepEqual(recursion(tree), [[100], [90, 120], [70, 99, 110, 130]]);
   });
+  it('should return array from an object tree', () => {
+    const tree = {
+      value: 25,
+      left: {
+        value: 16,
+        left: { value: 10, left: 5, right: 11 },
+        right: { value: 27, left: 24, right: 28 },
+      },
+      right: { value: 30, left: { value: 29 }, right: { value: 45 } },
+    };
+    assert.deepEqual(recursion(tree), [[25], [16, 30], [10, 27, 29, 45], [5, 11, 24, 28]]);
+  });
 });
