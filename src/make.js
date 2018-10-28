@@ -9,5 +9,6 @@ module.exports = function make(...theArgs) {
         return inner;
       } return callbacks.reduce((a, b) => (args[i](a, b)));
     }
+    return inner;
   };
 };
